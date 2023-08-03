@@ -1,0 +1,468 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::selection {
+    background-color: #fff;
+    color: #95C11E;
+}
+
+body,
+input {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    width: 2000px;
+    height: 2000px;
+    border-radius: 50%;
+    background: linear-gradient(-45deg, red, blue);
+    top: -3%;
+    right: 40%;
+    transform: translateY(-50%);
+    z-index: 2;
+    transition: 1.8s ease-in-out;
+}
+
+.form-page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 5%;
+}
+
+form {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.title {
+    font-size: 2.5em;
+    color: rgba(0, 0, 0, 0.74);
+    margin-bottom: 10px;
+}
+
+.signin-page {
+    display: block;
+    width: 40%;
+}
+
+.signup-page {
+    display: none;
+    width: 40%;
+}
+
+.input-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.input-info {
+    background-color: rgba(226, 221, 221, 0.548);
+    max-width: 320px;
+    width: 100%;
+    height: 55px;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    border-radius: 30px;
+}
+
+.input-info i {
+    text-align: center;
+    font-size: 1.1em;
+    line-height: 55px;
+    color: rgba(165, 165, 165, 0.836);
+}
+
+.input-info input {
+    border: none;
+    outline: none;
+    background: none;
+    color: rgba(33, 34, 34, 0.856);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+input::placeholder {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: rgba(95, 95, 95, 0.904);
+}
+.button {
+    margin-top: 10px;
+    background-color: rgba(11, 104, 243, 0.699);
+    color: aliceblue;
+    width: 150px;
+    height: 50px;
+    outline: none;
+    border: none;
+    border-radius: 45px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.button:hover {
+    background-color: rgba(34, 11, 243, 0.699);
+}
+
+form p {
+    width: 100%;
+    margin: 20px 0;
+    font-size: 1.2rem;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+}
+
+.social-icon {
+    width: 55px;
+    height: 55px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    margin: 0 0.4rem;
+    font-size: 1.2rem;
+    color: rgba(8, 5, 2, 0.822);
+}
+
+.social-icon:hover {
+    color: rgb(11, 104, 243);
+    border-color: rgb(11, 104, 243);
+}
+
+.signin-signup {
+    position: absolute;
+    top: 30%;
+    left: 60%;
+    width: 100%;
+    z-index: 1;
+}
+
+.pannel-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    top: 0;
+    left: 0;
+}
+
+.pannel {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    text-align: center;
+    z-index: 3;
+}
+
+.pannel .content {
+    color: aliceblue;
+    transition: .9s .5s ease-in-out;
+}
+
+.pannel h3 {
+    font-size: 1.5em;
+}
+
+.pannel p {
+    font-size: 1em;
+    font-weight: 500;
+    padding: 0 2%;
+}
+
+.pannel .button {
+    font-size: 1em;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    border: 2px solid rgb(241, 241, 241);
+    background: none;
+    width: 140px;
+    height: 45px;
+}
+
+.sign-up:hover {
+    background-color: #eb1177;
+}
+
+.sign-in:hover {
+    background-color: #a01cec;
+}
+
+img {
+    width: 100%;
+    transition: .9s .5s ease-in-out;
+
+}
+
+.left-pannel {
+    pointer-events: all;
+    padding: 30px 19% 25px 22%;
+}
+
+.right-pannel {
+    pointer-events: none;
+    padding: 30px 19% 25px 22%;
+    color: black;
+}
+
+.right-pannel .content,
+.right-pannel img {
+    transform: translateX(800px);
+}
+
+
+
+.container.login-part::before {
+    transform: translate(100%, -50%);
+    right: 60%;
+}
+
+.container.login-part .left-pannel .content,
+.container.login-part .left-pannel img {
+    transform: translateX(-800px);
+}
+
+.container.login-part .right-pannel .content,
+.container.login-part .right-pannel img {
+    transform: translateX(0px);
+}
+
+.container.login-part .right-pannel {
+    pointer-events: all;
+}
+
+.container.login-part .left-pannel {
+    pointer-events: none;
+}
+
+.container.login-part .signin-signup {
+    left: 6%;
+}
+
+.container.login-part .signup-page {
+    display: block;
+}
+
+.container.login-part form.signin-page {
+    display: none;
+}
+
+@media (max-width: 1200px) {
+    .container::before {
+        top: 10%;
+        right: 38%;
+
+    }
+}
+
+@media (max-width: 910px) {
+    .container {
+        min-height: 800px;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .container::before {
+        width: 1500px;
+        height: 1500px;
+        bottom: 68%;
+        left: -10%;
+        transform: translateX(-20%);
+        right: initial;
+        top: initial;
+        transition: 2s ease-out;
+    }
+
+    .signin-signup {
+        width: 100%;
+        left: 12%;
+        top: 40%;
+        transition: 1s 0.8s ease-in-out;
+    }
+
+    .pannel-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 2fr 1fr;
+    }
+
+    .right-pannel .content,
+    .right-pannel img {
+        transform: translatey(300px);
+    }
+
+    .pannel {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2.5rem 8%;
+    }
+
+    .pannel .content {
+        padding-right: 15%;
+        transition: 0.9s 0.8s ease-in-out;
+    }
+
+    .pannel h3 {
+        font-size: 1.2rem;
+    }
+
+    .pannel p {
+        font-size: 0.8rem;
+        padding: 0.5rem 4%;
+    }
+
+    img {
+        width: 200px;
+    }
+
+    .left-pannel {
+        grid-row: 1/2;
+    }
+
+    .right-pannel {
+        grid-row: 3/4;
+    }
+
+    .pannel .button {
+        width: 110px;
+        height: 35px;
+        font-size: 0.7rem;
+    }
+
+    .container.login-part::before {
+        transform: translate(-50%, 100%);
+        bottom: 26%;
+        left: 40%;
+        right: initial;
+
+    }
+
+    .signin-page {
+        width: 85%;
+    }
+
+    .input-info {
+        max-width: 400px;
+        width: 100%;
+    }
+
+    .container.login-part .left-pannel .content,
+    .container.login-part .left-pannel img {
+        transform: translateY(-300px);
+    }
+
+    .container.login-part .signin-signup {
+        top: 4%;
+        left: -13%;
+        transform: translateX(25%);
+    }
+
+    .container.login-part .signup-page {
+        width: 85%;
+    }
+}
+
+@media (max-width: 590px) {
+    .pannel p {
+        padding: 0.5rem 0%;
+    }
+
+    img {
+        display: none;
+    }
+
+    .pannel .content {
+        padding-right: initial;
+    }
+
+    .container::before {
+        transform: translateX(-32%);
+        bottom: 75%;
+        top: initial;
+    }
+
+    .container.login-part::before {
+        transform: translate(-47%, 100%);
+        bottom: 25%;
+        right: initial;
+    }
+
+    .signin-signup {
+        top: 35%;
+    }
+}
+
+@media (max-width:375px) {
+    .container {
+        min-height: 600px;
+        height: 100vh;
+        overflow: hidden;
+    }
+    .container::before {
+        transform: translateX(-35%);
+        bottom: 75%;
+    }
+
+    .container.login-part::before {
+        transform: translate(-48%, 100%);
+    }
+    form p {
+        margin: 0;
+    }
+
+    .pannel .content{
+        margin-top: -25px;
+    }
+
+    .title {
+        font-size: 1.9em;
+        margin-bottom: 0px;
+    }
+    .signin-page {
+       margin-top: -30px ;
+    }
+    
+    .signup-page {
+        margin-top: -25px;
+    }
+    .input-container .button {
+        margin-top: 0;
+    }
+    .pannel {
+        margin-bottom: -30px;
+    }
+}
